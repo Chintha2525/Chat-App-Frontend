@@ -13,7 +13,7 @@ function App() {
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
 
-  const joinRoom = () => {
+  const joinGroup = () => {
     if (username !== "" && room !== "") {
       socket.emit("join_room", room);
       setShowChat(true);
@@ -22,9 +22,9 @@ function App() {
 
   return (
     <div className="App">
-       <h1 className="text-center p-2 bg-primary border-light text-light rounded">FUN CHAT APP</h1>
+       <h1 className="home-head">CHAT APP</h1>
       {!showChat ? (
-        <div className="joinChatContainer">
+        <div className="home-head-body">
           <h3>Join A Chat</h3>
           <input
             type="text"
@@ -35,12 +35,12 @@ function App() {
           />
           <input
             type="text"
-            placeholder="Room ID..."
+            placeholder="Group ID...(no. only)"
             onChange={(event) => {
               setRoom(event.target.value);
             }}
           />
-          <button onClick={joinRoom}>Join A Room</button>
+          <button onClick={joinGroup}>Join A Group</button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
