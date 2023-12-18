@@ -6,7 +6,7 @@ import { useState } from "react";
 import Chat from "./Chat";
 
 
-const socket = io.connect("https://chat-app-backend-sc0d.onrender.com");
+const socket = io.connect("https://chat-app-3tts.onrender.com");
 
 function App() {
   const [username, setUsername] = useState("");
