@@ -128,7 +128,6 @@ body {
 
 .message {
   height: auto;
-  width: 80%;
   padding: 10px;
   display: flex;
 }
